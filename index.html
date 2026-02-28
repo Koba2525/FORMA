@@ -824,16 +824,6 @@
             <p class="section-sub">გაეცანით ჩვენს რეალიზებულ პროექტებს</p>
         </div>
         <div class="portfolio-grid" id="portfolioGrid">
-            <!-- 9 placeholder cells — replace .ph background with your images -->
-            <div class="portfolio-item fade-up" data-index="0"><div class="ph" style="background-image:url('')">ფოტო 1</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="1"><div class="ph" style="background-image:url('')">ფოტო 2</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="2"><div class="ph" style="background-image:url('')">ფოტო 3</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="3"><div class="ph" style="background-image:url('')">ფოტო 4</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="4"><div class="ph" style="background-image:url('')">ფოტო 5</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="5"><div class="ph" style="background-image:url('')">ფოტო 6</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="6"><div class="ph" style="background-image:url('')">ფოტო 7</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="7"><div class="ph" style="background-image:url('')">ფოტო 8</div><div class="overlay"><span>გადიდება</span></div></div>
-            <div class="portfolio-item fade-up" data-index="8"><div class="ph" style="background-image:url('')">ფოტო 9</div><div class="overlay"><span>გადიდება</span></div></div>
         </div>
     </div>
 </section>
@@ -1014,21 +1004,23 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Portfolio images list — add your image paths here
-    // Example: const photos = ['mena_pics/1.jpg', 'mena_pics/2.jpg', ...];
+    // ფოტოების სია — ახალი ფოტოს დამატებისას მხოლოდ აქ ჩაამატე სახელი
     const photos = [
-        '', '', '', '', '', '', '', '', ''
-        // Replace empty strings with your image paths
+        '1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg',
+        '6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg',
+        '11.jpeg','12.jpeg','13.jpeg','14.jpg'
+        // ახალი ფოტო: ,'15.jpeg','16.jpeg' და ა.შ.
     ];
 
-    // Set portfolio images
-    document.querySelectorAll('.portfolio-item').forEach((item, i) => {
-        if (photos[i]) {
-            item.querySelector('.ph').style.backgroundImage = `url('${photos[i]}')`;
-            item.querySelector('.ph').style.backgroundSize = 'cover';
-            item.querySelector('.ph').style.backgroundPosition = 'center';
-            item.querySelector('.ph').textContent = '';
-        }
+    // Grid ავტომატურად გენერირდება photos სიიდან
+    const grid = document.getElementById('portfolioGrid');
+    photos.forEach((src, i) => {
+        const item = document.createElement('div');
+        item.className = 'portfolio-item fade-up';
+        item.dataset.index = i;
+        item.innerHTML = `<div class="ph" style="background-image:url('${src}');background-size:cover;background-position:center"></div><div class="overlay"><span>გადიდება</span></div>`;
+        grid.appendChild(item);
+        observer.observe(item);
     });
 
     // Modal
