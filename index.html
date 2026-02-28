@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA — პრემიუმ ავეჯის დამზადება თბილისი</title>
+    <meta name="description" content="FORMA — პრემიუმ ავეჯის დამზადება თბილისში. საძინებელი, გარდერობი, სამზარეულო. ინდივიდუალური დიზაინი, უმაღლესი ხარისხი. 592125011">
+    <meta name="keywords" content="ავეჯის დამზადება თბილისი, სამზარეულო, საძინებელი, გარდერობი, FORMA, ავეჯი, avejis damzadeba tbilisi">
+    <meta property="og:title" content="FORMA — პრემიუმ ავეჯის დამზადება">
+    <meta property="og:description" content="ინდივიდუალური დიზაინი, უმაღლესი ხარისხი. თბილისი. 592125011">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+Georgian:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f0ece4;
+            --white: #faf8f5;
+            --surface: #e4ddd3;
+            --gold: #9a7340;
+            --gold-light: #b8935a;
+            --dark: #141210;
+            --text: #0e0c08;
+            --muted: #2e2a24;
+            --border: rgba(154,115,64,0.3);
+            --section-pad: 90px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: 'Noto Sans Georgian', sans-serif;
+            font-weight: 300;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(235,230,220,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: box-shadow 0.3s;
+        }
+
+        header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: 8px;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--gold); }
+
+        nav { display: flex; gap: 36px; align-items: center; }
+
+        nav a {
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.25s;
+            font-weight: 400;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        .nav-cta {
+            background: var(--gold);
+            color: white !important;
+            padding: 10px 22px;
+            font-size: 12px !important;
+            letter-spacing: 1.5px;
+            transition: background 0.25s !important;
+        }
+
+        .nav-cta:hover { background: var(--gold-light) !important; color: white !important; }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .burger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--dark);
+            transition: all 0.3s;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(160deg, #e8e2d8 60%, #d8cfc0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: 'F';
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 500px;
+            color: rgba(184,147,90,0.04);
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            padding: 8px 20px;
+            margin-bottom: 36px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(46px, 8vw, 80px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--dark);
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 .small-text {
+            font-size: clamp(28px, 5vw, 50px);
+            letter-spacing: 0px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: 15px;
+            color: var(--muted);
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-tagline {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 48px;
+            opacity: 0.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 32px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: 'Noto Sans Georgian', sans-serif;
+            font-weight: 400;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--dark);
+            color: white;
+        }
+
+        .btn-primary:hover { background: var(--gold); }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--dark);
+            border: 1px solid rgba(30,26,22,0.3);
+        }
+
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+        .btn-green {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-green:hover { background: #1fba59; }
+
+        /* ─── SECTION COMMON ─── */
+        section { padding: var(--section-pad) 20px; }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 400;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 15px;
+            color: var(--muted);
+            max-width: 480px;
+        }
+
+        .section-head { margin-bottom: 56px; }
+
+        /* ─── WHY ─── */
+        .why { background: #e8e2d8; }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2px;
+        }
+
+        .why-card {
+            background: var(--bg);
+            padding: 42px 36px;
+            transition: background 0.3s;
+        }
+
+        .why-card:hover { background: var(--surface); }
+
+        .why-icon {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .why-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* ─── SERVICES ─── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--surface);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .service-img {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #c8bfb0, #b0a693);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: rgba(30,26,22,0.3);
+            text-transform: uppercase;
+            /* Replace with: background-image: url('your-photo.jpg'); background-size: cover; */
+        }
+
+        .service-overlay {
+            position: relative;
+            z-index: 1;
+            padding: 28px 32px;
+            background: linear-gradient(to top, rgba(30,26,22,0.85), transparent);
+            width: 100%;
+        }
+
+        .service-overlay h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .service-overlay p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 6px;
+        }
+
+        /* ─── PORTFOLIO ─── */
+        .portfolio { background: #e0d9ce; }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            aspect-ratio: 1;
+            background: var(--surface);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .portfolio-item .ph {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #bdb4a8, #a89e92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(30,26,22,0.3);
+            text-transform: uppercase;
+            transition: transform 0.5s ease;
+            /* Replace with: background-image: url('photo.jpg'); background-size: cover; background-position: center; */
+        }
+
+        /* To add your photo: remove background gradient above, add:
+           background-image: url('mena_pics/1.jpg');
+           background-size: cover;
+           background-position: center;
+        */
+
+        .portfolio-item:hover .ph { transform: scale(1.05); }
+
+        .portfolio-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(30,26,22,0);
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-item:hover .overlay { background: rgba(30,26,22,0.4); }
+
+        .portfolio-item .overlay span {
+            color: white;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .overlay span { opacity: 1; }
+
+        /* ─── HOW ─── */
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .how-step {
+            background: var(--surface);
+            padding: 48px 36px;
+            position: relative;
+        }
+
+        .how-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px;
+            font-weight: 300;
+            color: var(--border);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .how-step h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+
+        .how-step p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+        /* ─── CTA BAND ─── */
+        .cta-band {
+            background: var(--dark);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-band .section-label { color: var(--gold-light); }
+
+        .cta-band h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 5vw, 54px);
+            font-weight: 300;
+            color: white;
+            margin-bottom: 14px;
+            letter-spacing: 1px;
+        }
+
+        .cta-band h2 em { color: var(--gold); font-style: normal; }
+
+        .cta-band p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 44px; }
+
+        .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* ─── CONTACT ─── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-left h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .contact-left p { font-size: 15px; color: var(--muted); margin-bottom: 36px; }
+
+        .contact-links { display: flex; flex-direction: column; gap: 3px; }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 20px 24px;
+            background: var(--surface);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+            border-left: 2px solid transparent;
+        }
+
+        .contact-link:hover { border-left-color: var(--gold); background: var(--white); color: var(--dark); }
+
+        .c-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .c-icon svg { width: 20px; height: 20px; }
+
+        .c-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+        .c-val { font-size: 16px; font-weight: 400; }
+
+        .contact-right {
+            background: var(--surface);
+            padding: 44px;
+        }
+
+        .contact-right h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .contact-right p { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.8; }
+
+        .contact-info-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .ci-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .ci-text { font-size: 14px; color: var(--text); }
+        .ci-text strong { font-weight: 500; display: block; color: var(--dark); margin-bottom: 2px; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--dark);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 10px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo span { color: var(--gold); }
+
+        .footer-tagline {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 24px;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.2);
+        }
+
+        /* ─── FLOATING ─── */
+        .float-btns {
+            position: fixed;
+            bottom: 28px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 200;
+        }
+
+        .float-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-decoration: none;
+        }
+
+        .float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(0,0,0,0.2); }
+        .float-btn svg { width: 24px; height: 24px; }
+
+        .fb-wa { background: #25D366; }
+        .fb-phone { background: var(--dark); }
+
+        /* ─── MOBILE ─── */
+        @media (max-width: 768px) {
+            :root { --section-pad: 60px; }
+
+            header { padding: 0 20px; }
+
+            nav { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--bg); flex-direction: column; gap: 0; padding: 20px 0; border-bottom: 1px solid var(--border); z-index: 100; }
+            nav.open { display: flex; }
+            nav a { padding: 14px 30px; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.04); }
+            .nav-cta { margin: 10px 30px 0; text-align: center; }
+
+            .burger { display: flex; }
+
+            .how-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 520px) {
+            .portfolio-grid { grid-template-columns: 1fr 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .hero-btns { flex-direction: column; align-items: center; }
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── MODAL ─── */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal.open { display: flex; }
+
+        .modal-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 85vh;
+        }
+
+        .modal-inner img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+            line-height: 1;
+            background: none;
+            border: none;
+        }
+
+        .modal-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 20px;
+            background: none;
+            border: none;
+            transition: color 0.2s;
+        }
+        .modal-arrow:hover { color: var(--gold); }
+        .modal-prev { left: -70px; }
+        .modal-next { right: -70px; }
+
+        @media (max-width: 600px) {
+            .modal-prev { left: 0; background: rgba(0,0,0,0.4); border-radius: 0 4px 4px 0; }
+            .modal-next { right: 0; background: rgba(0,0,0,0.4); border-radius: 4px 0 0 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+    <a href="#" class="logo">FORM<span>A</span></a>
+    <nav id="nav">
+        <a href="#services">მომსახურება</a>
+        <a href="#portfolio">ნამუშევრები</a>
+        <a href="#how">პროცესი</a>
+        <a href="#contact">კონტაქტი</a>
+        <a href="https://wa.me/995592125011" target="_blank" class="btn btn-primary nav-cta">შეკვეთა</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="მენიუ">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content fade-up visible">
+        <div class="hero-badge">თბილისი · ავეჯის დამზადება</div>
+        <h1><em>FORMA</em><br><span class="small-text">სადაც დიზაინი ხვდება სრულყოფილებას</span></h1>
+        <p class="hero-sub">ინდივიდუალური დიზაინი · უმაღლესი ხარისხი · თბილისი</p>
+        <p class="hero-tagline">FORMA-ში ავეჯის შეკვეთა კიდევ უფრო მარტივია 🏡</p>
+        <div class="hero-btns">
+            <a href="https://wa.me/995592125011" target="_blank" class="btn btn-green">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+            <a href="tel:+995592125011" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                დარეკვა
+            </a>
+            <a href="#portfolio" class="btn btn-outline">ნამუშევრები</a>
+        </div>
+    </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+    <div class="container">
+        <div class="section-head fade-up">
+            <div class="section-label">ჩვენი უპირატესობები</div>
+            <h2 class="section-title">რატომ FORMA?</h2>
+            <p class="section-sub">ჩვენი ძირითადი პრინციპები, რომლებიც გამოგვარჩევს</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card fade-up">
+                <div class="why-icon">🎨</div>
+                <h3>ინდივიდუალური დიზაინი</h3>
+                <p>თითოეული პროექტი უნიკალურია — შექმნილია თქვენი გემოვნებისა და სივრცის გათვალისწინებით</p>
+            </div>
+            <div class="why-card fade-up">
+                <div class="why-icon">⭐</div>
+                <h3>პრემიუმ ხარისხი</h3>
+                <p>ვიყენებთ მხოლოდ უმაღლესი ხარისხის მასალებს და თანამედროვე წარმოების ტექნოლოგიებს</p>
+            </div>
+            <div class="why-card fade-up">
+                <div class="why-icon">🚚</div>
+                <h3>უფასო მიწოდება</h3>
+                <p>უფასო მიწოდება და პროფესიონალური მონტაჟი თბილისის მასშტაბით — ყველა პროექტზე</p>
+            </div>
+            <div class="why-card fade-up">
+                <div class="why-icon">✅</div>
+                <h3>გარანტია</h3>
+                <p>ყველა ნამუშევარზე ვაძლევთ ხარისხის გარანტიას. თქვენი კმაყოფილება — ჩვენი პრიორიტეტი</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="container">
+        <div class="section-head fade-up">
+            <div class="section-label">მომსახურება</div>
+            <h2 class="section-title">ვამზადებთ</h2>
+            <p class="section-sub">ნებისმიერი ოთახისთვის, ნებისმიერი სტილით</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-up">
+                <div class="service-img">
+                    <!-- ჩაანაცვლე შენი ფოტოთი: background-image: url('kitchen.jpg') -->
+                    სამზარეულო
+                </div>
+                <div class="service-overlay">
+                    <h3>სამზარეულო</h3>
+                    <p>ფუნქციური და ელეგანტური სამზარეულოები</p>
+                </div>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-img">
+                    <!-- ჩაანაცვლე შენი ფოტოთი: background-image: url('bedroom.jpg') -->
+                    საძინებელი
+                </div>
+                <div class="service-overlay">
+                    <h3>საძინებელი</h3>
+                    <p>კომფორტი და სტილი ერთ სივრცეში</p>
+                </div>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-img">
+                    <!-- ჩაანაცვლე შენი ფოტოთი: background-image: url('wardrobe.jpg') -->
+                    გარდერობი
+                </div>
+                <div class="service-overlay">
+                    <h3>გარდერობი</h3>
+                    <p>მაქსიმალური სივრცის გამოყენება</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-head fade-up">
+            <div class="section-label">ჩვენი ნამუშევრები</div>
+            <h2 class="section-title">პორტფოლიო</h2>
+            <p class="section-sub">გაეცანით ჩვენს რეალიზებულ პროექტებს</p>
+        </div>
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- 9 placeholder cells — replace .ph background with your images -->
+            <div class="portfolio-item fade-up" data-index="0"><div class="ph" style="background-image:url('')">ფოტო 1</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="1"><div class="ph" style="background-image:url('')">ფოტო 2</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="2"><div class="ph" style="background-image:url('')">ფოტო 3</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="3"><div class="ph" style="background-image:url('')">ფოტო 4</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="4"><div class="ph" style="background-image:url('')">ფოტო 5</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="5"><div class="ph" style="background-image:url('')">ფოტო 6</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="6"><div class="ph" style="background-image:url('')">ფოტო 7</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="7"><div class="ph" style="background-image:url('')">ფოტო 8</div><div class="overlay"><span>გადიდება</span></div></div>
+            <div class="portfolio-item fade-up" data-index="8"><div class="ph" style="background-image:url('')">ფოტო 9</div><div class="overlay"><span>გადიდება</span></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+    <div class="container">
+        <div class="section-head fade-up" style="text-align:center; max-width:100%;">
+            <div class="section-label" style="text-align:center;">პროცესი</div>
+            <h2 class="section-title" style="text-align:center;">როგორ შევუკვეთოთ?</h2>
+            <p class="section-sub" style="margin:0 auto; text-align:center;">თქვენი ოცნების ავეჯამდე მხოლოდ 3 ნაბიჯია</p>
+        </div>
+        <div class="how-grid">
+            <div class="how-step fade-up">
+                <div class="how-num">01</div>
+                <h3>კონსულტაცია</h3>
+                <p>დაგვიკავშირდით, გაგვიზიარეთ თქვენი იდეები და ჩვენი დიზაინერები დაგეხმარებიან სრული სურათის ჩამოყალიბებაში</p>
+            </div>
+            <div class="how-step fade-up">
+                <div class="how-num">02</div>
+                <h3>აზომვა და პროექტირება</h3>
+                <p>ჩვენი გუნდი მოვა ადგილზე, შევქმნით ინდივიდუალურ 3D პროექტს და შეგვათანხმებთ ყველა დეტალს</p>
+            </div>
+            <div class="how-step fade-up">
+                <div class="how-num">03</div>
+                <h3>დამზადება და მონტაჟი</h3>
+                <p>ვამზადებთ და ვახდენთ პროფესიონალურ მონტაჟს — თბილისის მასშტაბით, ვადებში</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band fade-up">
+    <div class="section-label">დაიწყეთ ახლავე</div>
+    <h2>შეუკვეთე <em>FORMA</em>-ს<br>შენი ავეჯი</h2>
+    <p>უფასო კონსულტაცია — ზარი ან WhatsApp</p>
+    <div class="cta-btns">
+        <a href="https://wa.me/995592125011" target="_blank" class="btn btn-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp-ით
+        </a>
+        <a href="tel:+995592125011" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.3);">
+            592 12 50 11
+        </a>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-left fade-up">
+                <div class="section-label">კონტაქტი</div>
+                <h2>დაგვიკავშირდით</h2>
+                <p>ნებისმიერი კითხვით მოგვწერეთ ან დაგვირეკეთ</p>
+                <div class="contact-links">
+                    <a href="tel:+995592125011" class="contact-link">
+                        <div class="c-icon" style="background:rgba(184,147,90,0.12);">
+                            <svg fill="none" stroke="#b8935a" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-label">დარეკვა</div>
+                            <div class="c-val">592 12 50 11</div>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/995592125011" target="_blank" class="contact-link">
+                        <div class="c-icon" style="background:rgba(37,211,102,0.1);">
+                            <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-label">WhatsApp</div>
+                            <div class="c-val">592 12 50 11</div>
+                        </div>
+                    </a>
+                    <a href="viber://chat?number=%2B995592125011" class="contact-link">
+                        <div class="c-icon" style="background:rgba(127,83,172,0.1);">
+                            <svg viewBox="0 0 24 24" fill="#7F53AC"><path d="M11.398.002C9.473.028 5.331.344 3.014 2.467 1.162 4.32.536 7.01.46 10.324c-.073 3.314-.16 9.52 5.835 11.196h.005l-.005 2.568s-.038.999.621 1.2c.79.243 1.254-.508 2.008-1.322.414-.447.986-1.104 1.416-1.6 3.905.328 6.908-.422 7.249-.532.79-.258 5.263-.83 5.992-6.765.754-6.117-.366-9.977-2.97-11.712l-.001-.001c-.706-.481-3.574-1.393-8.2-1.354h-.012zm.064 1.667h.011c4.082-.03 6.627.737 7.22 1.139 2.182 1.451 3.097 4.896 2.44 10.305-.613 5.006-4.215 5.345-4.87 5.556-.287.094-3.016.758-6.41.536 0 0-2.54 3.062-3.333 3.858-.125.127-.271.178-.369.153-.138-.036-.176-.202-.174-.446l.022-3.752c-5.076-1.397-4.793-6.607-4.729-9.506.064-2.9.573-5.214 2.147-6.774 1.98-1.825 5.563-2.046 8.045-2.069z"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-label">Viber</div>
+                            <div class="c-val">592 12 50 11</div>
+                        </div>
+                    </a>
+                    <a href="https://m.me/koba.sartania" target="_blank" class="contact-link">
+                        <div class="c-icon" style="background:rgba(0,153,255,0.1);">
+                            <svg viewBox="0 0 24 24" fill="#0099FF"><path d="M12 0C5.374 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.975 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8.1l3.131 3.26L19.752 8.1l-6.561 6.863z"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-label">Messenger</div>
+                            <div class="c-val">koba.sartania</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-right fade-up">
+                <h3>FORMA</h3>
+                <p>პრემიუმ ავეჯის დამზადება ინდივიდუალური დიზაინით. ჩვენ ვქმნით სივრცეებს, სადაც გინდა ყოფნა.</p>
+                <div class="contact-info-item">
+                    <div class="ci-dot"></div>
+                    <div class="ci-text">
+                        <strong>მდებარეობა</strong>
+                        თბილისი, საქართველო
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="ci-dot"></div>
+                    <div class="ci-text">
+                        <strong>სამუშაო საათები</strong>
+                        ორშაბათი–შაბათი, 10:00–19:00
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="ci-dot"></div>
+                    <div class="ci-text">
+                        <strong>მომსახურება</strong>
+                        საძინებელი · გარდერობი · სამზარეულო
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="ci-dot"></div>
+                    <div class="ci-text">
+                        <strong>მიწოდება</strong>
+                        უფასო — თბილისის მასშტაბით
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">FORM<span>A</span></div>
+    <div class="footer-tagline">პრემიუმ ავეჯის დამზადება · თბილისი</div>
+    <p>© 2025 FORMA. ყველა უფლება დაცულია.</p>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+    <a href="https://wa.me/995592125011" target="_blank" class="float-btn fb-wa" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="tel:+995592125011" class="float-btn fb-phone" title="დარეკვა">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+    </a>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-inner">
+        <button class="modal-close" id="modalClose">×</button>
+        <button class="modal-arrow modal-prev" id="modalPrev">&#8249;</button>
+        <img id="modalImg" src="" alt="FORMA">
+        <button class="modal-arrow modal-next" id="modalNext">&#8250;</button>
+    </div>
+</div>
+
+<script>
+    // Burger
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => nav.classList.remove('open'));
+    });
+
+    // Header scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Fade up on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Portfolio images list — add your image paths here
+    // Example: const photos = ['mena_pics/1.jpg', 'mena_pics/2.jpg', ...];
+    const photos = [
+        '', '', '', '', '', '', '', '', ''
+        // Replace empty strings with your image paths
+    ];
+
+    // Set portfolio images
+    document.querySelectorAll('.portfolio-item').forEach((item, i) => {
+        if (photos[i]) {
+            item.querySelector('.ph').style.backgroundImage = `url('${photos[i]}')`;
+            item.querySelector('.ph').style.backgroundSize = 'cover';
+            item.querySelector('.ph').style.backgroundPosition = 'center';
+            item.querySelector('.ph').textContent = '';
+        }
+    });
+
+    // Modal
+    let current = 0;
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+
+    document.querySelectorAll('.portfolio-item').forEach((item, i) => {
+        item.addEventListener('click', () => {
+            if (!photos[i]) return;
+            current = i;
+            modalImg.src = photos[i];
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalPrev').addEventListener('click', () => {
+        current = (current - 1 + photos.length) % photos.length;
+        if (photos[current]) modalImg.src = photos[current];
+    });
+
+    document.getElementById('modalNext').addEventListener('click', () => {
+        current = (current + 1) % photos.length;
+        if (photos[current]) modalImg.src = photos[current];
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') document.getElementById('modalPrev').click();
+        if (e.key === 'ArrowRight') document.getElementById('modalNext').click();
+    });
+</script>
+</body>
+</html>
